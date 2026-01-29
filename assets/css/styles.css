@@ -239,6 +239,11 @@ img {
   cursor: pointer;
 }
 
+.nav .nav__button{
+  background-color: var(--title-color);
+  border: none;
+}
+
 /* Show menu */
 
 .show-menu{
@@ -264,11 +269,11 @@ img {
 }
 
 .home__data{
-  align-items: center;
+  text-align: center;
 }
 
 .home__subtitle{
-  font-size: var(--biggest-font-size);
+  font-size: var(--bigger-font-size);
   -webkit-text-stroke: 1px var(--title-color);
   color: transparent;
 }
@@ -302,7 +307,7 @@ img {
 }
 
 .home__triangle-2{
-  width: 105px;
+  width: 205px;
   background-color: var(--first-color-alt);
 }
 
@@ -321,6 +326,36 @@ img {
 
 /*=============== BUTTON ===============*/
 
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  padding: 18px 32px;
+  border: 2px solid var(--first-color-light);
+  color: var(--title-color-black);
+  font-weight: var(--font-bold);
+  cursor: pointer;
+  transition: background .3s;
+}
+
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+
+.button i {
+  font-size: 1.25rem;
+  transition: transform .3s;
+}
+
+.button__flex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+}
+
+.button__flex:hover i {
+  transform: translateX(.25rem);
+}
 
 /*=============== LOGOS ===============*/
 
