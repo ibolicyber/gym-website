@@ -95,3 +95,38 @@ calculateForm.addEventListener('submit', calculateBmi)
 
 
 /*=============== EMAIL JS ===============*/
+
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message'),
+      contactUser = document.getElementById('contact-user')
+
+const sendEmail = (e) => {
+    e.preventDefault()
+
+    if (contactUser.value === '') {
+        // Add and remove color
+        contactMessage.classList.remove('color-green')
+        contactMessage.classList.add('color-red')
+
+        contactMessage.textContent = 'You must enter your email'
+
+        setTimeout(() => {
+            contactMessage.textContent = ''
+        }, 3000)
+    } else {
+        emailjs.sendForm('service_63qcco8', 'template_bb6btj4', '#contact-form', 'S1rhdjmFX5F7ILX3k');
+            then(() => {
+                contactMessage.classList.add('color-green')
+                contactMessage.textContent = 'You registered succesfully'
+
+                setTimeout(() => {
+                    contactMessage.textContent = ''
+                }, 3000)
+            }, (error) => {
+                alert('OOPS! SOMETHING HAS FAILED...', error)
+            })
+        contactUser.value = ''
+    }
+}
+
+contactForm.addEventListener('submit', sendEmail)
